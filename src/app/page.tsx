@@ -1,9 +1,95 @@
-import Image from 'next/image'
+import Image from "next/image";
+
+const Person = () => {
+  return <h1>Flavio Coradini</h1>;
+};
+
+/**
+ * NAME
+ * Bit Image
+ * DESCRIPTION
+ * JOBS
+ * EDUCATION
+ */
+
+/**
+ * SECTION - e.g. Experience, Education
+ * header
+ * body
+ * items
+ */
+
+const Paragraph = ({ text }: { text: String }) => (
+  <p className="mb-5">{text}</p>
+);
+
+const Section: React.FC<{ header: String; children: React.ReactNode }> = ({
+  header,
+  children,
+}) => {
+  return (
+    <div className="my-10">
+      <h2 className="text-2xl">{header}</h2>
+      {children}
+    </div>
+  );
+};
+
+const PersonProfileImage = () => (
+  <div className="my-10">
+    <Image
+      src="/profile.jpeg"
+      alt="Person Logo"
+      className="rounded-full"
+      width={200}
+      height={200}
+      priority
+    />
+  </div>
+);
+
+const Bio = () => (
+  <div className="max-w-lg">
+    <Paragraph
+      text="From my first algorithm implemented on a Lego Mindstorm during High
+          School until my latest Web and Mobile App, coding was always a safe
+          place for freedom and creativity. My professional life started during
+          my Electrical Engineering course as a Scholarship Student but it
+          really sparked after I took over the IT family business and faced all
+          the challenges of running a company."
+    />
+    <Paragraph
+      text="Presently, I proudly identify myself as a proactive and technical
+          developer with an engineering background and successful international
+          experiences. Over the course of 9 years in the industry, I had the
+          opportunity to develop my technical and social skills by leading
+          projects in different segments. I’m very grateful for all the
+          opportunities I have had in my life and how much I could learn on this
+          journey."
+    />
+    <Paragraph
+      text="Over the past year, I have dedicated my time to studying and actively
+          engaging with the web3 ecosystem. I am now seeking opportunities to
+          transition into the web3 industry. To further enhance my understanding
+          and connect with like‐minded individuals, I recently participated in
+          an ETH Global Hackathon. This allowed me to not only expand my network
+          but also stay up‐to‐date with the latest advancements in technology
+          within the web3 space."
+    />
+  </div>
+);
+
+const PersonName = () => <h1 className="text-4xl">Flavio Coradini</h1>;
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+    <main className="flex min-h-screen flex-col justify-between items-center p-24 font-mono">
+      <PersonName />
+      <PersonProfileImage />
+      <Bio />
+      <Section header={"Jobs"}>hi</Section>
+
+      {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
@@ -15,7 +101,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -47,7 +133,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
+            Docs{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -64,7 +150,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
+            Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -81,7 +167,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
+            Templates{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -98,7 +184,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
+            Deploy{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -107,7 +193,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
     </main>
-  )
+  );
 }
