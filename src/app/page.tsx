@@ -20,7 +20,7 @@ const Person = () => {
  */
 
 const Paragraph = ({ text }: { text: String }) => (
-  <p className="mb-5">{text}</p>
+  <p className="mb-5 leading-relaxed">{text}</p>
 );
 
 const Section: React.FC<{ header: String; children: React.ReactNode }> = ({
@@ -28,8 +28,8 @@ const Section: React.FC<{ header: String; children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <div className="my-10">
-      <h2 className="text-2xl">{header}</h2>
+    <div className="my-10 w-full">
+      <h2 className="text-2xl text-center">{header}</h2>
       {children}
     </div>
   );
@@ -49,7 +49,7 @@ const PersonProfileImage = () => (
 );
 
 const Bio = () => (
-  <div className="max-w-lg">
+  <div className="mt-5">
     <Paragraph
       text="From my first algorithm implemented on a Lego Mindstorm during High
           School until my latest Web and Mobile App, coding was always a safe
@@ -58,36 +58,66 @@ const Bio = () => (
           really sparked after I took over the IT family business and faced all
           the challenges of running a company."
     />
-    <Paragraph
-      text="Presently, I proudly identify myself as a proactive and technical
-          developer with an engineering background and successful international
-          experiences. Over the course of 9 years in the industry, I had the
-          opportunity to develop my technical and social skills by leading
-          projects in different segments. I’m very grateful for all the
-          opportunities I have had in my life and how much I could learn on this
-          journey."
-    />
-    <Paragraph
-      text="Over the past year, I have dedicated my time to studying and actively
-          engaging with the web3 ecosystem. I am now seeking opportunities to
-          transition into the web3 industry. To further enhance my understanding
-          and connect with like‐minded individuals, I recently participated in
-          an ETH Global Hackathon. This allowed me to not only expand my network
-          but also stay up‐to‐date with the latest advancements in technology
-          within the web3 space."
-    />
   </div>
 );
 
 const PersonName = () => <h1 className="text-4xl">Flavio Coradini</h1>;
 
+const jobs = [
+  {
+    company: "The Beachbody Company",
+    url: "https://www.beachbodyondemand.com/",
+    location: "Remote",
+    role: "Senior Software Engineer",
+    period: "Jul. 2022 - Feb. 2023",
+    achievments: [
+      "Successfully migrated React web pages to Next.js, resulting in improved SEO and performance through enhanced caching capabilities.",
+      "Promoted architectural improvements and modernization efforts for a 6-year-old React codebase",
+      "Enhanced the Video Player analytics tool (Conviva) to efficiently capture and analyze stream data, ensuring accurate and reliable insights",
+    ],
+  },
+  {
+    company: "The Beachbody Company",
+    url: "https://www.beachbodyondemand.com/",
+    location: "Remote",
+    role: "Senior Software Engineer",
+    period: "Jul. 2022 - Feb. 2023",
+    achievments: [
+      "Successfully migrated React web pages to Next.js, resulting in improved SEO and performance through enhanced caching capabilities.",
+      "Promoted architectural improvements and modernization efforts for a 6-year-old React codebase",
+      "Enhanced the Video Player analytics tool (Conviva) to efficiently capture and analyze stream data, ensuring accurate and reliable insights",
+    ],
+  },
+];
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between items-center p-24 font-mono">
+    <main className="flex min-h-screen flex-col justify-between items-center p-24 font-mono bg-gray-800">
       <PersonName />
       <PersonProfileImage />
       <Bio />
-      <Section header={"Jobs"}>hi</Section>
+      {/* Include the company links */}
+      <Section header={"Jobs"}>
+        {jobs.map(({ company, role, period, location, achievments }) => (
+          <div key={company} className="my-5">
+            <div className="flex flex-row justify-between">
+              <h3 className="font-bold">{company}</h3>
+              <h3 className="italic">{location}</h3>
+            </div>
+            <div className="flex flex-row justify-between mt-1">
+              <h4 className="font-medium">{role.toUpperCase()}</h4>
+              <h3 className="italic">{period}</h3>
+            </div>
+            <ul className="list-disc mt-2">
+              {achievments.map((a, i) => (
+                <li key={i}>{a}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </Section>
+      {/* <Section header={"Education"}>hi</Section> */}
+      {/* <Section header={"About Me"}>hi</Section> */}
 
       {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
