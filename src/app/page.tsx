@@ -50,14 +50,7 @@ const PersonProfileImage = () => (
 
 const Bio = () => (
   <div className="mt-5">
-    <Paragraph
-      text="From my first algorithm implemented on a Lego Mindstorm during High
-          School until my latest Web and Mobile App, coding was always a safe
-          place for freedom and creativity. My professional life started during
-          my Electrical Engineering course as a Scholarship Student but it
-          really sparked after I took over the IT family business and faced all
-          the challenges of running a company."
-    />
+    <Paragraph text="From my first algorithm implemented on a Lego Mindstorm during High School until my latest Web and Mobile App, coding was always a safe place for freedom and creativity. My professional life started during my Electrical Engineering course as a Scholarship Student but it really sparked after I took over the IT family business and faced all the challenges of running a company. Presently, I proudly identify myself as a proactive and technical developer with an engineering background and successful international experiences. Over the course of 9 years in the industry, I had the opportunity to develop my technical and social skills by leading projects in different segments. I’m very grateful for all the opportunities I have had in my life and how much I could learn on this journey. " />
   </div>
 );
 
@@ -77,15 +70,48 @@ const jobs = [
     ],
   },
   {
-    company: "The Beachbody Company",
-    url: "https://www.beachbodyondemand.com/",
-    location: "Remote",
-    role: "Senior Software Engineer",
-    period: "Jul. 2022 - Feb. 2023",
+    company: "Babylon",
+    url: "https://www.babylonhealth.com/",
+    location: "London",
+    role: "Software Engineer",
+    period: "May. 2020 - Dec. 2021",
     achievments: [
-      "Successfully migrated React web pages to Next.js, resulting in improved SEO and performance through enhanced caching capabilities.",
-      "Promoted architectural improvements and modernization efforts for a 6-year-old React codebase",
-      "Enhanced the Video Player analytics tool (Conviva) to efficiently capture and analyze stream data, ensuring accurate and reliable insights",
+      "Played a key role in migrating the Babylon mobile application to React Native, involving more than 100 screens",
+      "Successfully delivered the mobile app globally, ensuring its availability worldwide",
+      "Provided mentorship and guidance to engineers throughout the organization",
+      "Participated in the hiring process of new engineers, contributing to the growth of the team",
+      "Developed new microservices to enhance the functionality and performance of the application",
+      "Automated the delivery pipelines, implementing Continuous Integration/Continuous Deployment (CI/CD) practices",
+    ],
+  },
+  {
+    company: "Train Effective",
+    url: "https://www.traineffective.com/",
+    location: "London",
+    role: "Full Stack Engineer",
+    period: "Dec. 2018 - May. 2020",
+    achievments: [
+      "Worked as a Developer and also as a Scrum Master for a Web, Mobile and a Backend application",
+      "Developed the Frontend using React and React Native",
+      "Built the Backend using Firebase and a Node/Express app hosted on GCP",
+      "Scaled our products' user base worldwide by 1000% via implementing a Freemium model",
+      "Reformulated the payment system using technologies such as Stripe and In App Purchases",
+      "Ensured compliance with Apple and Google guidelines for payment system implementation",
+    ],
+  },
+  {
+    company: "Pauta Eletrônica",
+    url: "https://alunosbook.com.br/",
+    location: "Brazil",
+    role: "Technical Lead",
+    period: "Oct. 2013 - Dec. 2018",
+    achievments: [
+      "Responsible for the planning, development, and delivery of Alunosbook, a school management platform",
+      "Provided all the necessary tools required by school employees, parents, and students",
+      "Continued involvement with the project at a strategic level",
+      "Utilized the stack consisting of .NET Core, SQL Server, Vue.js, and Node/Express",
+      "Started development of an app based on Ionic/Angular2 with Typescript",
+      "Later migrated the app to React Native",
     ],
   },
 ];
@@ -117,7 +143,9 @@ export default function Home() {
         ))}
       </Section>
       {/* <Section header={"Education"}>hi</Section> */}
+      <Section header={"Projects"}>hi</Section>
       {/* <Section header={"About Me"}>hi</Section> */}
+      <Section header={"Getting in touch"}>hi</Section>
 
       {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
